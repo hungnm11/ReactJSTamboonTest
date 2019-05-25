@@ -1,0 +1,32 @@
+
+.pagination {
+  text-align: center;
+  ul {
+    display: inline-block;
+    padding-left: 0;
+    margin: 20px 0 10px 0;
+    border-radius: 4px;
+    text-align: center;
+    .disabled {
+      pointer-events:none;
+    }
+    li {
+      display: inline;
+      span {
+        padding: 6px 12px;
+        line-height: 1.42857143;
+        color: #337ab7;
+        border: 1px solid #dddd;
+      }
+    }
+    .active {
+      span, span:hover, span:focus {
+        z-index: 3;
+        color: #fff;
+        background-color: #337ab7;
+        border-color: #337ab7;
+        cursor: default;
+      }
+    }
+  }
+}
