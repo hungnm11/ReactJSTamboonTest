@@ -11,10 +11,14 @@
       @media #{$device-small-screen} {
         height: 140px;
       }
-      img {
-        margin: 0 auto;
+      a {
         height: inherit;
-        width: 100%;
+        display: block;
+        img {
+          margin: 0 auto;
+          height: inherit;
+          width: 100%;
+        }
       }
     }
   }

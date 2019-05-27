@@ -13,9 +13,9 @@ import * as serviceWorker from './serviceWorker';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-import { faLink, faEye, faComment, faHeart, faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { faLink, faEye, faComment, faHeart, faUserCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
-library.add(fab, faLink, faEye, faComment, faHeart, faUserCircle);
+library.add(fab, faLink, faEye, faComment, faHeart, faUserCircle, faTimesCircle);
 
 ReactDOM.render(
   <Provider store={store}>
