@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import ImageFooter from '../ImageFooter';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import ImageFooter from '../ImageFooter';
 
 import './giphy_item.scss';
 import waiting from '../../assets/images/waiting.gif';
@@ -46,7 +48,14 @@ class GiphyItem extends Component {
       <div className="pure-u-1-2 pure-u-md-1-3 pure-u-lg-1-4 item-wrapper">
         <div className="item-content">
           <div className="image-container">
-            {renderImage(data.images.fixed_height_still.url)}
+            <Link
+              to={{
+                pathname: `/giphy/${data.id}`,
+                state: { modal: true}
+              }}
+            >
+              {renderImage(data.images.fixed_height_still.url)}
+            </Link>
           </div>
           <ImageFooter />
         </div>

@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <div className="wrapper">
         <Router history={history}>
-          <Route path="/" exact component={Giphy} />
+          <Route component={Giphy} />
         </Router>
       </div>
     );
