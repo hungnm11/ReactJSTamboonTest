@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ImageFooter from '../ImageFooter';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-
 import './giphy_item.scss';
 import waiting from '../../assets/images/waiting.gif';
 
