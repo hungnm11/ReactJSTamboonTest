@@ -30,7 +30,7 @@ class Giphy extends Component {
 }
 
 const mapStateToProps = state => ({
-  giphy: state.Giphy.data,
+  giphy: state.Giphy.data.data,
   isGiphyFetching: state.Giphy.isFetching
 });
 

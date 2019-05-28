@@ -14,16 +14,17 @@ const receiveGiphyTrends = (data) => {
   }
 };
 
-export const getGiphyTrends = (limit) => (dispatch) => {
+export const getGiphyTrends = (limit, offset = 0) => (dispatch) => {
   dispatch(requestGiphyTrends());
   return request({
     method: 'GET',
     url: '/trending?',
     params: {
       limit,
-      rating: 'G'
+      rating: 'G',
+      offset,
     },
   }).then(respone => {
-    dispatch(receiveGiphyTrends(respone.data));
+    dispatch(receiveGiphyTrends(respone));
   })
 }
