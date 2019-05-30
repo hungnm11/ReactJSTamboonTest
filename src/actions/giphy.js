@@ -3,19 +3,36 @@ import request from '../utils';
 
 const requestGiphyTrends = () => {
   return {
-    type: ActionTypes.Giphy.getGiphyTrends
+    type: ActionTypes.Giphy.getGiphyTrends,
   }
 };
 
 const receiveGiphyTrends = (data) => {
   return {
     type: ActionTypes.Giphy.getGiphyTrendsSuccess,
-    data
+    data,
+  }
+};
+
+const requestLoadMoreGiphyTrends = () => {
+  return {
+    type: ActionTypes.Giphy.getLoadMore,
+  }
+};
+
+const receiveLoadMoreGiphyTrends = (data) => {
+  return {
+    type: ActionTypes.Giphy.getLoadMoreSuccess,
+    data,
   }
 };
 
 export const getGiphyTrends = (limit, offset = 0) => (dispatch) => {
-  dispatch(requestGiphyTrends());
+  if (offset === 0) {
+    dispatch(requestGiphyTrends());
+  } else {
+    dispatch(requestLoadMoreGiphyTrends());
+  }
   return request({
     method: 'GET',
     url: '/trending?',
@@ -25,6 +42,10 @@ export const getGiphyTrends = (limit, offset = 0) => (dispatch) => {
       offset,
     },
   }).then(respone => {
-    dispatch(receiveGiphyTrends(respone));
+    if (offset === 0) {
+      dispatch(receiveGiphyTrends(respone));
+    } else {
+      dispatch(receiveLoadMoreGiphyTrends(respone));
+    }
   })
 }

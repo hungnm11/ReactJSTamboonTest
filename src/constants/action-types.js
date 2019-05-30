@@ -2,6 +2,8 @@ const actionTypes = {
   Giphy: {
     getGiphyTrends: null,
     getGiphyTrendsSuccess: null,
+    getLoadMore: null,
+    getLoadMoreSuccess: null,
   },
 };
 
