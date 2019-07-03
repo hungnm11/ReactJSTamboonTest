@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-import ImageFooter from '../ImageFooter';
 
 import './giphy_item.scss';
 import waiting from '../../assets/images/waiting.gif';
@@ -58,7 +55,7 @@ class GiphyItem extends Component {
             </div>
             <div className="pure-u-2-5 social">
               <div className="social-item">
-                <a class="pure-button pure-button-primary" href="#">Donate</a>
+                <a className="pure-button pure-button-primary" href="/">Donate</a>
               </div>
             </div>
           </div>

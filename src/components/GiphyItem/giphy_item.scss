@@ -59,11 +59,28 @@
     }
   }
   .image-footer {
+    display: flex;
+    padding-top: 10px;
+    color: #a2a2a1;
     a {
       &.pure-button-primary {
         background-color: #ffffff;
         border: 1px solid #136bb5;
-        color: #136bb5
+        color: #136bb5;
+      }
+    }
+
+    .social {
+      display: flex;
+      justify-content: flex-end;
+      .social-item {
+        span {
+          margin-left: 2px;
+          font-size: 15px;
+        }
+      }
+      .social-item:nth-child(2) {
+        margin: 0 12px;
       }
     }
   }
