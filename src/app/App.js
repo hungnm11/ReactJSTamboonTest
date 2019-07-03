@@ -10,6 +10,7 @@ class App extends Component {
   render() {
     return (
       <div className="wrapper">
+        <h1>Omise Tamboon React</h1>
         <Router history={history}>
           <Route component={GiphiesWithModal} />
         </Router>
