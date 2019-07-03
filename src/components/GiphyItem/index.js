@@ -19,9 +19,6 @@ const renderUserName = data => {
   if (data.user) {
     return (
       <div className="image-name">
-        <div className="avatar">
-          <img className="pure-img" src={data.user.avatar_url} alt="" />
-        </div>
         <div className="name">
           <p>{data.user.display_name}</p>
         </div>
@@ -30,11 +27,8 @@ const renderUserName = data => {
   } else {
     return (
       <div className="image-name">
-        <div className="avatar">
-          <FontAwesomeIcon icon="user-circle" color="#a2a2a1" />
-        </div>
         <div className="name">
-          <p>.....</p>
+          <p>Omise Tamboon</p>
         </div>
       </div>
     )
@@ -45,21 +39,30 @@ class GiphyItem extends Component {
   render() {
     const { data } = this.props;
     return (
-      <div className="pure-u-1-2 pure-u-md-1-3 pure-u-lg-1-4 item-wrapper">
+      <div className="pure-u-1-2 pure-u-md-1-2 pure-u-lg-1-2 item-wrapper">
         <div className="item-content">
           <div className="image-container">
             <Link
               to={{
                 pathname: `/giphy/${data.id}`,
-                state: { modal: true}
+                state: { modal: true }
               }}
             >
               {renderImage(data.images.fixed_height_still.url)}
             </Link>
+
           </div>
-          <ImageFooter />
+          <div className="pure-g image-footer">
+            <div className="pure-u-3-5 link">
+              {renderUserName(data)}
+            </div>
+            <div className="pure-u-2-5 social">
+              <div className="social-item">
+                <a class="pure-button pure-button-primary" href="#">Donate</a>
+              </div>
+            </div>
+          </div>
         </div>
-        {renderUserName(data)}
       </div>
     )
   }

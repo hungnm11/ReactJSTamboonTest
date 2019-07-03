@@ -23,10 +23,10 @@
     }
   }
   .image-name {
-    margin: 0 12px 10px 12px;
-    padding-left: 10px;
+    margin: 0 12px 0 0px;
     box-sizing: border-box;
     display: flex;
+    height: 100%;
     .avatar {
       height: 30px;
       width: 30px;
@@ -43,18 +43,27 @@
     }
     .name {
       display: flex;
-      width: calc(100% - 30px);
+      width: calc(100% - 0px);
       padding-left: 4px;
       box-sizing: border-box;
       p {
-        height: 50%;
+        height: auto;
         align-self: center;
         font-size: 15px;
-        color: #136bb5;
+        color: #000;
         font-weight: 700;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+      }
+    }
+  }
+  .image-footer {
+    a {
+      &.pure-button-primary {
+        background-color: #ffffff;
+        border: 1px solid #136bb5;
+        color: #136bb5
       }
     }
   }
